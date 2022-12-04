@@ -104,9 +104,13 @@ h1 {
     flex-direction: column;
     gap: 4rem;
     overflow-y: scroll;
+    align-items: center;
 }
 
 #Colors > div {
+    
+    max-width: 800px;
+    width:100%;
     
     grid-template-columns : repeat( 6 , 1fr ) ;
     grid-gap : 2rem ;
