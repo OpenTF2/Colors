@@ -1,0 +1,7 @@
+{
+    "imports" : {
+        
+        "YAML" : "https://deno.land/std@0.166.0/encoding/yaml.ts" ,
+        "Path" : "https://deno.land/std@0.166.0/path/mod.ts"
+    }
+}

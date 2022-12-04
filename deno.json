@@ -1,0 +1,7 @@
+{
+    "importMap" : "Imports.json" ,
+
+    "tasks" : {
+        "build" : "deno run --watch --allow-read --allow-write Source/App.js"
+    }
+}

@@ -4,8 +4,8 @@ name : Deploy Static Website
 on:
     push:
     
-        branches : ['main' ]
-        paths : [ 'Source/**' ]
+        branches : [ 'main' ]
+        paths : [ 'Website/**' ]
         
 
 permissions:

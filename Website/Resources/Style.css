@@ -1,0 +1,170 @@
+
+
+@font-face {
+    unicode-range : U+0000-00FF , U+0131 , U+0152-0153 , U+02BB-02BC , U+02C6 , U+02DA , U+02DC , U+2000-206F , U+2074 , U+20AC , U+2122 , U+2191 , U+2193 , U+2212 , U+2215 , U+FEFF , U+FFFD ;
+    font-display : swap ;
+    font-stretch : 100% ;
+    font-family : 'Lietz' ;
+    font-weight : 300 ;
+    font-style : normal ;
+    src : url('Lietz.otf') format('opentype') ;
+}
+
+
+
+:root {
+    
+    --test : rgba(70,130,180,1) ;
+}
+
+* {
+    box-sizing: border-box;
+    padding : 0 ;
+    margin : 0 ;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    
+    background-color: #e3e2e2;
+    min-height: 100vh;
+    min-width: 100vw;
+    max-height: 100vh;
+    overflow-x : hidden;
+    overflow-y : scroll;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+h1 {
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    background: #e5964b;
+    font-family: monospace;
+    font-size: 2.6rem;
+    font-weight: 100;
+    filter: drop-shadow(2px 2px 1px #00000088);
+    user-select: none;
+    font-family: 'Lietz' , monospace;
+    z-index: 100;
+}
+
+.Unsee {
+    animation-duration: 0.16s;
+    animation-name: dissapear;
+    animation-fill-mode: forwards;
+}
+
+.Unseen {
+    display: none !important;
+    
+}
+
+
+@keyframes dissapear {
+  
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
+
+#Categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 3rem;
+    padding-top: 2.5rem;
+    position: fixed;
+    right: 0;
+    top: 7rem;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+#Categories > input {
+    width: 3rem;
+    aspect-ratio: 1;
+}
+
+#Colors {
+    width: calc(100% - 6rem);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    overflow-y: scroll;
+}
+
+#Colors > div {
+    
+    grid-template-columns : repeat( 6 , 1fr ) ;
+    grid-gap : 2rem ;
+    display : grid ;
+    border: solid #e5964b;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    border-width: 0.16rem;
+    filter: drop-shadow(2px 2px 1px #00000088);
+    background-color: white;
+}
+
+
+#Colors > div > div {
+    display: grid;
+    grid-template-areas:
+        ' a x '
+        ' y b ';
+}
+
+#Colors > div > div Color:first-child {
+    grid-area : a;
+}
+#Colors > div > div Color:last-child {
+    grid-area : b;
+}
+
+
+#Colors > div Color {
+    
+    border-radius : 50% ;
+    aspect-ratio : 1 ;
+    filter: drop-shadow(0.1rem 0.1rem 0.1rem #00000050);
+    transition: 
+        scale 0.1s ease-in-out ,
+        transform 0.8s ease-in-out;
+    cursor : pointer ;
+    
+}
+
+#Colors > div Color:after {
+    
+    position : absolute ;
+    width : 100% ;
+    content : '' ;
+    
+    border-radius : 50% ;
+    aspect-ratio : 1 ;
+    
+    background: linear-gradient(
+        135deg , 
+        #FFFFFF44 0%, 
+        transparent 50%, 
+        #00000044 100%);
+}
+
+#Colors > div Color:hover {
+    
+    scale : 1.06 ;
+    transform: translate(0.04rem,-0.04rem);
+}
